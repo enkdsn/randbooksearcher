@@ -12,8 +12,18 @@ const (
 	oreillyEbook = "https://www.oreilly.co.jp/ebook/#all_titles"
 )
 
-func Fetch() ([]models.Book, error) {
-	url := oreillyEbook
+type OrEbookFetcher struct {
+	url string
+}
+
+func NewOrEbookFetcher() *OrEbookFetcher {
+	return &OrEbookFetcher{
+		url: oreillyEbook,
+	}
+}
+
+func (oef OrEbookFetcher) Fetch() ([]models.Book, error) {
+	url := oef.url
 	doc, err := goquery.NewDocument(url)
 	if err != nil {
 		return nil, err

@@ -1,4 +1,4 @@
-package components
+package randomize
 
 import (
 	"math/rand"
