@@ -15,8 +15,6 @@ func NewOrEBookRepo() *OrEBookRepo {
 	return &OrEBookRepo{}
 }
 
-const OrEBookCSVPath = "../../resource/or_ebook.csv"
-
 type OrEBookStr struct {
 	URL             string
 	Name            string
@@ -35,7 +33,7 @@ const (
 
 func (oer *OrEBookRepo) Books() ([]*models.Book, error) {
 	var bs []*models.Book
-	file, err := os.Open(OrEBookCSVPath)
+	file, err := os.Open("../resource/or_ebook.csv")
 	if err != nil {
 		panic(err)
 	}
