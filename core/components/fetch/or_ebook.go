@@ -35,6 +35,7 @@ func (oef OrEbookFetcher) Fetch() ([]models.Book, error) {
 		t := s.Find(".title")
 		html := t.Find("a")
 		href, _ := html.Attr("href")
+		isbn := s.Find(".isbn")
 
 		pi, err := strconv.Atoi(strings.Replace(s.Find(".price").Text(), ",", "", -1))
 		if err != nil {
@@ -45,6 +46,7 @@ func (oef OrEbookFetcher) Fetch() ([]models.Book, error) {
 			URL:   strings.Replace(href, "./..", "https://www.oreilly.co.jp", -1),
 			Name:  t.Text(),
 			Price: pi,
+			ISBN:  isbn.Text(),
 		}
 
 		if b.Name == "" {
