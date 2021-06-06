@@ -44,6 +44,8 @@ github.com/enkdsn/randbooksearcher v0.0.0-20210605234655-8f50e4439c0e h1:z5D4LFG
 github.com/enkdsn/randbooksearcher v0.0.0-20210606000857-cdbb08ce927b h1:+5GmyX7geUlKDiikkd2iTxKGsQ176/ssGdvK0/CqCyg=
 github.com/enkdsn/randbooksearcher/core v0.0.0-20210606003019-2ed9b960e6dc h1:BSQOe8c66Jd4TF1dZF98O/kklKReuoMFDIeTgdhHdK4=
 github.com/enkdsn/randbooksearcher/core v0.0.0-20210606003019-2ed9b960e6dc/go.mod h1:8570b+2brPx0hI2A9nE8u1eG1/bIRnjVhompIabxjXA=
+github.com/enkdsn/randbooksearcher/core v0.0.0-20210606012032-eae1d613630d h1:wVrj4BtmP1ZD24l+N9VHkD+9GBFI1IeU0iPmTUq/N5k=
+github.com/enkdsn/randbooksearcher/core v0.0.0-20210606012032-eae1d613630d/go.mod h1:8570b+2brPx0hI2A9nE8u1eG1/bIRnjVhompIabxjXA=
 github.com/fatih/color v1.7.0/go.mod h1:Zm6kSWBoL9eyXnKyktHP6abPY2pDugNf5KwzbycvMj4=
 github.com/fsnotify/fsnotify v1.4.7 h1:IXs+QLmnXW2CcXuY+8Mzv/fWEsPGWxqefPtCP5CnV9I=
 github.com/fsnotify/fsnotify v1.4.7/go.mod h1:jwhsz4b93w/PPRr/qN1Yymfu8t87LnFCMoQvtojpjFo=

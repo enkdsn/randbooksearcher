@@ -23,28 +23,21 @@ type SimpleCmdResponse struct {
 
 var SimpleCmd = &cobra.Command{
 	Use:   "simple",
-	Short: "3 books from Oreilly Ebook",
+	Short: "return books these sum of prices by maxprice",
 	Long:  `-simple return books that sum of price by 11000 yen`,
 	RunE: func(cmd *cobra.Command, args []string) error {
-		i, err := cmd.Flags().GetInt("integer")
+		mp, err := cmd.Flags().GetInt("maxprice")
 		if err != nil {
 			return err
 		}
-		b, err := cmd.Flags().GetBool("boolean")
-		if err != nil {
-			return err
-		}
-		s, err := cmd.Flags().GetString("string")
-		if err != nil {
-			return err
-		}
+
 		oef := fetch.NewOrEbookFetcher()
 		books, err := oef.Fetch()
 		if err != nil {
 			return err
 		}
 
-		books = randomize.Randomize(books)
+		books = randomize.RandomizeWithMaxPrice(mp, books)
 
 		var response SimpleCmdJSONResponse
 		for _, b := range books {
