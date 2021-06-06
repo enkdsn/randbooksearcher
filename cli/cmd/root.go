@@ -40,7 +40,7 @@ func init() {
 	// viper.SetDefault("license", "apache")
 
 	rootCmd.AddCommand(SimpleCmd)
-	SimpleCmd.Flags().Int("maxprice", 11000, "max price for books selection")
+	SimpleCmd.PersistentFlags().Int("maxprice", 11000, "max price for books selection")
 	SimpleCmd.PersistentFlags().String("format", "json", "format for stdout")
 
 }
