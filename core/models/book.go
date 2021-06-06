@@ -1,7 +1,8 @@
 package models
 
 type Book struct {
-	url   string
-	name  string
-	price int
+	URL   string
+	Name  string
+	Price int
+	ISBN  string
 }
