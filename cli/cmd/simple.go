@@ -2,6 +2,7 @@ package cmd
 
 import (
 	"encoding/json"
+	"errors"
 	"fmt"
 
 	"github.com/enkdsn/randbooksearcher/core/components/randomize"
@@ -35,6 +36,9 @@ var SimpleCmd = &cobra.Command{
 		books, err := oebRepo.Books()
 		if err != nil {
 			return err
+		}
+		if books == nil {
+			return errors.New("no data")
 		}
 
 		books = randomize.RandomizeWithMaxPrice(mp, books)
