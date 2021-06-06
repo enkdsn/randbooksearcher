@@ -7,8 +7,8 @@ import (
 	"github.com/enkdsn/randbooksearcher/core/models"
 )
 
-func Randomize(bs []models.Book) []models.Book {
-	var bss []models.Book
+func Randomize(bs []*models.Book) []*models.Book {
+	var bss []*models.Book
 	sum := 0
 	// 11000円を超えないように探索
 	for range bs {
@@ -27,8 +27,8 @@ func Randomize(bs []models.Book) []models.Book {
 	return bss
 }
 
-func RandomizeWithMaxPrice(mp int, bs []models.Book) []models.Book {
-	var bss []models.Book
+func RandomizeWithMaxPrice(mp int, bs []*models.Book) []*models.Book {
+	var bss []*models.Book
 	sum := 0
 	for range bs {
 		rand.Seed(time.Now().UnixNano())
@@ -46,6 +46,6 @@ func RandomizeWithMaxPrice(mp int, bs []models.Book) []models.Book {
 	return bss
 }
 
-func remove(slice []models.Book, s int) []models.Book {
+func remove(slice []*models.Book, s int) []*models.Book {
 	return append(slice[:s], slice[s+1:]...)
 }
