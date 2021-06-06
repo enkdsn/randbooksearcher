@@ -4,8 +4,8 @@ import (
 	"encoding/json"
 	"fmt"
 
-	"github.com/enkdsn/randbooksearcher/core/components/fetch"
 	"github.com/enkdsn/randbooksearcher/core/components/randomize"
+	"github.com/enkdsn/randbooksearcher/core/repos"
 	"github.com/spf13/cobra"
 )
 
@@ -31,8 +31,8 @@ var SimpleCmd = &cobra.Command{
 			return err
 		}
 
-		oef := fetch.NewOrEbookFetcher()
-		books, err := oef.Fetch()
+		oebRepo := repos.NewOrEBookRepo()
+		books, err := oebRepo.Books()
 		if err != nil {
 			return err
 		}
